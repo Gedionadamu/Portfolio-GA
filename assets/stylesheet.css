@@ -3,9 +3,10 @@ body{
     font-family: 'Roboto', sans-serif;
     /* font-family: 'Roboto Mono', monospace; */
     color: #eeeeee;
-    margin: 0px 150px 0px 150px;
+    margin: 0px 350px 0px 350px;
 }
  
+  
 @media screen and (max-width:1200px){
     body{
         margin: 0px 125px 0px 125px;
@@ -18,8 +19,6 @@ body{
     .Intro{
         margin: 0px;
     }
-
-         
 }
 @media screen and (max-width:635px){
     body{
@@ -157,12 +156,11 @@ hr{
     color: #eeeeee;
     font-weight:100;
     font-size: 15px;
-    
-
 }
 .work-img{
     --col: 4;
     --row: 2;
+    position: relative;
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(var(--col), 1fr);
@@ -173,6 +171,7 @@ hr{
 }
 
 .work{
+    display: block;
     height: 100%;
     width: 100%;
     filter: grayscale(100%);
@@ -181,5 +180,44 @@ hr{
     grid-column:span var(--col);
     grid-row: span var(--row);
     
+}
+.contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 20px;
+}
+.image-overlay{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #393e46,0.1;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 1.5s;
+}
+.image-overlay-blur{
+    backdrop-filter: blur(3px);
+}
+.image-overlay > *{
+    transform: translateY(20px);
+    transition: 1.5s;
+}
+.image-overlay:hover{
+    opacity: 1;
+    
+}
+.image-overlay:hover > *{
+    transform: translateY(0px);
+}
+.image-title{
+    font-size: 30px;
+    color:#00adb5; 
+   
 }
 
